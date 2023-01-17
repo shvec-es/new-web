@@ -110,6 +110,7 @@ body {
 }
 
 .nav-link {
+  position: relative;
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -121,8 +122,20 @@ body {
 }
 
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.current {
   color: var(--accent-color);
+}
+
+.nav-link.current::after {
+  position: absolute;
+  bottom: 0;
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
 }
 
 .contacts {
@@ -366,6 +379,42 @@ body {
   background: var(--green-color);
 }
 
+.footer-form {
+  margin-left: auto;
+}
+.footer-label {
+  display: block;
+  color: var(--white-text);
+  margin-bottom: 16px;
+}
+
+.footer-wrap {
+  display: flex;
+  gap: 24px;
+}
+.footer-input {
+  width: 264px;
+  padding: 8px 0 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background: transparent;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribe-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+  width: 165px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
 /* portfolio */
 .filter {
   display: flex;
@@ -485,6 +534,7 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
+  padding: 72px 24px 24px;
   transform: translate(-50%, -50%) scale(1);
   width: 408px;
   min-height: 576px;
@@ -512,4 +562,129 @@ body {
   background: var(--footer-text);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+
+  transition: background-color var(--animate), color var(--animate);
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  background: var(--accent-color);
+  color: var(--white-text);
+}
+
+.close-modal-icon {
+  fill: currentColor;
+}
+.form-title {
+  margin-bottom: 14px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--main-text);
+}
+
+.form-label {
+  position: relative;
+  display: block;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: var(--cust-color);
+}
+
+.form-label:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.form-input {
+  margin-top: 4px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border-color var(--animate);
+}
+
+.form-input:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+}
+
+.form-input:focus + .form-icon {
+  fill: var(--accent-color);
+}
+
+.form-input:not(:last-child) {
+  height: 40px;
+  padding-left: 38px;
+}
+
+.form-input:last-child {
+  padding: 8px 16px;
+  height: 120px;
+}
+
+.form-input:last-child::placeholder {
+  font-size: 12px;
+  line-height: 1.33;
+
+  letter-spacing: 0.04em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+.form-icon {
+  position: absolute;
+  left: 19px;
+  top: 55%;
+
+  transition: fill var(--animate);
+}
+
+.form-check {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #757575;
+}
+
+.check-input {
+  position: absolute;
+  appearance: none;
+}
+
+.check-input:checked + .checkbox {
+  background: var(--accent-color);
+  border: 1.25px solid var(--accent-color);
+}
+
+.check-input:focus + .checkbox {
+  border: 1.25px solid var(--accent-color);
+}
+
+.checkbox {
+  margin-right: 8px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+
+  border: 1.25px solid var(--main-text);
+  border-radius: 2px;
+
+  transition: background-color var(--animate), border-color var(--animate);
+}
+
+.check-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.send-btn {
+  display: block;
+  margin: 0 auto;
+  min-width: 169px;
 }

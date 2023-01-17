@@ -29,7 +29,7 @@
         <nav class="nav">
           <ul class="flex-list">
             <li>
-              <a class="nav-link" href="./index.html">Studio</a>
+              <a class="nav-link current" href="./index.html">Studio</a>
             </li>
             <li>
               <a class="nav-link" href="./portfolio.html">Portfolio</a>
@@ -117,20 +117,24 @@
       </section>
       <section class="about">
         <div class="container">
-          <h2 class="title">What are we doing</h2>
-          <ul class="about-list">
-            <li>
-              <img src="./images/monitor.jpg" alt="monitor" width="360" />
-            </li>
-            <li><img src="./images/mobile.jpg" alt="mobile" width="360" /></li>
-            <li>
-              <img
-                src="./images/phone-notebook.jpg"
-                alt="phone and notebook"
-                width="360"
-              />
-            </li>
-          </ul>
+          <form action="">
+            <h2 class="title">What are we doing</h2>
+            <ul class="about-list">
+              <li>
+                <img src="./images/monitor.jpg" alt="monitor" width="360" />
+              </li>
+              <li>
+                <img src="./images/mobile.jpg" alt="mobile" width="360" />
+              </li>
+              <li>
+                <img
+                  src="./images/phone-notebook.jpg"
+                  alt="phone and notebook"
+                  width="360"
+                />
+              </li>
+            </ul>
+          </form>
         </div>
       </section>
       <section class="team section">
@@ -386,15 +390,71 @@
             </li>
           </ul>
         </div>
+        <form class="footer-form">
+          <label class="footer-label" for="email">Subscribe</label>
+          <div class="footer-wrap">
+            <input
+              class="footer-input"
+              type="email"
+              id="email"
+              placeholder="E-mail"
+            />
+            <button class="button subscribe-btn" type="submit">
+              Subscribe
+              <svg width="24" height="24">
+                <use href="./images/sprite.svg#icon-subscribe"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="close-modal" type="button" data-modal-close>
-          <svg width="8" height="8">
+          <svg class="close-modal-icon" width="8" height="8">
             <use href="./images/sprite.svg#icon-close-modal"></use>
           </svg>
         </button>
+        <p class="form-title">Leave your contacts and we will call you back</p>
+        <form>
+          <label class="form-label"
+            >Name
+            <input class="form-input" type="text" />
+            <svg class="form-icon" width="12" height="12">
+              <use href="./images/sprite.svg#icon-name"></use>
+            </svg>
+          </label>
+          <label class="form-label"
+            >Phone
+            <input class="form-input" type="tel" />
+            <svg class="form-icon" width="13" height="13">
+              <use href="./images/sprite.svg#icon-phone"></use>
+            </svg>
+          </label>
+          <label class="form-label"
+            >Email
+            <input class="form-input" type="email" />
+            <svg class="form-icon" width="15" height="12">
+              <use href="./images/sprite.svg#icon-email"></use>
+            </svg>
+          </label>
+          <label class="form-label"
+            >Comment
+            <textarea class="form-input" placeholder="Text input"></textarea>
+          </label>
+          <label class="form-check">
+            <input class="check-input" type="checkbox" />
+            <span class="checkbox">
+              <svg width="10" height="8">
+                <use href="./images/sprite.svg#icon-check"></use>
+              </svg>
+            </span>
+            <span>I accept the terms and conditions of the </span
+            ><a class="check-link" href="/"> Privacy Policy</a>
+          </label>
+          <button type="submit" class="button send-btn">Send</button>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
